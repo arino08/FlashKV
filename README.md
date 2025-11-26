@@ -19,20 +19,20 @@
 [![Tests](https://img.shields.io/badge/Tests-69%20Passing-brightgreen?style=for-the-badge)]()
 
 <p align="center">
-  <strong>🎯 A learning-focused systems programming project demonstrating database internals, network protocols, and concurrent programming in Rust</strong>
+  <strong>A learning-focused systems programming project demonstrating database internals, network protocols, and concurrent programming in Rust</strong>
 </p>
 
-[Features](#-features) •
-[Architecture](#-architecture) •
-[Getting Started](#-getting-started) •
-[Commands](#-supported-commands) •
-[What I Learned](#-what-i-learned)
+[Features](#features) •
+[Architecture](#architecture) •
+[Getting Started](#getting-started) •
+[Commands](#supported-commands) •
+[What I Learned](#what-i-learned)
 
 ---
 
 </div>
 
-## 📖 About This Project
+## About This Project
 
 **FlashKV** is a Redis-compatible, in-memory key-value database that I built from scratch to deeply understand systems programming concepts. This isn't just another Redis clone—it's a comprehensive learning journey through database internals, network programming, protocol design, and concurrent systems.
 
@@ -49,17 +49,17 @@ I wanted to go beyond tutorials and actually implement the core systems that pow
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Database Features
 | Feature | Description |
 |---------|-------------|
-| 🔥 **Redis Protocol Compatible** | Works with `redis-cli`, Telnet, and any Redis client library |
-| 🧵 **Thread-Safe Concurrent Access** | 64-shard architecture allowing parallel reads/writes |
-| ⏰ **TTL & Auto-Expiry** | Keys can expire automatically with lazy + active cleanup |
-| 📝 **Multiple Data Types** | Strings and Lists with full Redis-compatible operations |
-| 🔍 **Pattern Matching** | KEYS command with glob-style pattern support (`*`, `?`, `[abc]`) |
-| 📊 **Built-in Statistics** | Real-time metrics for ops/second, memory usage, and more |
+| **Redis Protocol Compatible** | Works with `redis-cli`, Telnet, and any Redis client library |
+| **Thread-Safe Concurrent Access** | 64-shard architecture allowing parallel reads/writes |
+| **TTL & Auto-Expiry** | Keys can expire automatically with lazy + active cleanup |
+| **Multiple Data Types** | Strings and Lists with full Redis-compatible operations |
+| **Pattern Matching** | KEYS command with glob-style pattern support (`*`, `?`, `[abc]`) |
+| **Built-in Statistics** | Real-time metrics for ops/second, memory usage, and more |
 
 ### Technical Highlights
 | Component | Implementation |
@@ -72,7 +72,7 @@ I wanted to go beyond tutorials and actually implement the core systems that pow
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -135,7 +135,7 @@ I wanted to go beyond tutorials and actually implement the core systems that pow
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -190,7 +190,7 @@ Ariz
 
 ---
 
-## 📋 Supported Commands
+## Supported Commands
 
 ### String Commands (17 commands)
 
@@ -260,7 +260,7 @@ Ariz
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 flashkv/
@@ -286,7 +286,7 @@ flashkv/
 │       ├── mod.rs              # Module exports
 │       └── handler.rs          # Per-client read loop, stats
 │
-├── docs/                       # 📚 Comprehensive Documentation (15 files)
+├── docs/                       # Comprehensive Documentation (15 files)
 │   ├── 00_INDEX.md             # Documentation index
 │   ├── 01_RUST_FUNDAMENTALS.md # Rust concepts used in the project
 │   ├── 02_ASYNC_PROGRAMMING.md # Tokio, async/await patterns
@@ -313,7 +313,7 @@ flashkv/
 
 ---
 
-## 🧠 What I Learned
+## What I Learned
 
 Building FlashKV taught me deep, practical knowledge in several areas:
 
@@ -354,7 +354,7 @@ Building FlashKV taught me deep, practical knowledge in several areas:
 
 ---
 
-## 📊 Performance
+## Performance
 
 Run benchmarks:
 ```bash
@@ -379,7 +379,7 @@ INCR: ~180,000 requests/second
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 The following features could be added to extend FlashKV:
 
@@ -392,7 +392,7 @@ The following features could be added to extend FlashKV:
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 This project includes **15 detailed documentation files** covering:
 
@@ -408,17 +408,17 @@ Each file includes code examples, diagrams, and exercises.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Whether it's:
-- 🐛 Bug fixes
-- ✨ New features
-- 📝 Documentation improvements
-- 🧪 Additional tests
+- Bug fixes
+- New features
+- Documentation improvements
+- Additional tests
 
 ---
 
-## 📄 License
+## License
 
 MIT License - feel free to use this for learning and building!
 
@@ -430,6 +430,6 @@ MIT License - feel free to use this for learning and building!
 
 *This project was built as a learning exercise to understand database internals, network programming, and systems design.*
 
-**[⬆ Back to Top](#-flashkv)**
+**[Back to Top](#flashkv)**
 
 </div>
