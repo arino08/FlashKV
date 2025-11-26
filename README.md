@@ -87,40 +87,40 @@ I wanted to go beyond tutorials and actually implement the core systems that pow
 │  │ • Spawns     │     │ • Buffered   │     │ • Dispatches │                │
 │  │   tasks      │     │   I/O        │     │   to storage │                │
 │  └──────────────┘     └──────────────┘     └──────┬───────┘                │
-│                                                   │                         │
-│         ┌─────────────────────────────────────────┼─────────────────┐       │
-│         │                                         ▼                 │       │
-│         │  ┌─────────────────────────────────────────────────────┐  │       │
-│         │  │                  StorageEngine                      │  │       │
-│         │  │                                                     │  │       │
+│                                                   │                        │
+│         ┌─────────────────────────────────────────┼────────────────┐       │
+│         │                                         ▼                │       │
+│         │  ┌────────────────────────────────────────────────────┐  │       │
+│         │  │                  StorageEngine                     │  │       │
+│         │  │                                                    │  │       │
 │         │  │   ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐  │  │       │
 │         │  │   │ Shard 0 │ │ Shard 1 │ │ Shard 2 │ │   ...   │  │  │       │
 │         │  │   │ ─────── │ │ ─────── │ │ ─────── │ │  64     │  │  │       │
 │         │  │   │ RwLock  │ │ RwLock  │ │ RwLock  │ │ shards  │  │  │       │
 │         │  │   │ HashMap │ │ HashMap │ │ HashMap │ │         │  │  │       │
-│         │  │   │ (strings)│ │(strings)│ │(strings)│ │         │  │  │       │
+│         │  │   │(strings)│ │(strings)│ │(strings)│ │         │  │  │       │
 │         │  │   │ HashMap │ │ HashMap │ │ HashMap │ │         │  │  │       │
 │         │  │   │ (lists) │ │ (lists) │ │ (lists) │ │         │  │  │       │
 │         │  │   └─────────┘ └─────────┘ └─────────┘ └─────────┘  │  │       │
-│         │  │                                                     │  │       │
-│         │  └─────────────────────────────────────────────────────┘  │       │
-│         │                           ▲                               │       │
-│         │                           │                               │       │
-│         │  ┌────────────────────────┴────────────────────────────┐  │       │
-│         │  │              ExpirySweeper (Background)             │  │       │
-│         │  │  • Adaptive interval (100ms - 1s based on load)     │  │       │
-│         │  │  • Scans shards for expired keys                    │  │       │
-│         │  │  • Graceful shutdown support                        │  │       │
-│         │  └─────────────────────────────────────────────────────┘  │       │
-│         └───────────────────────────────────────────────────────────┘       │
-│                                                                             │
-│  ┌───────────────────────────────────────────────────────────────────────┐  │
-│  │                         RESP Protocol Parser                          │  │
-│  │  • Zero-copy parsing with bytes::Bytes                                │  │
-│  │  • Supports: Simple Strings, Errors, Integers, Bulk Strings, Arrays   │  │
-│  │  • Inline command support (plain text like "SET key value")           │  │
-│  └───────────────────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────────────────┘
+│         │  │                                                    │  │       │
+│         │  └────────────────────────────────────────────────────┘  │       │
+│         │                           ▲                              │       │
+│         │                           │                              │       │
+│         │  ┌────────────────────────┴───────────────────────────┐  │       │
+│         │  │              ExpirySweeper (Background)            │  │       │
+│         │  │  • Adaptive interval (100ms - 1s based on load)    │  │       │
+│         │  │  • Scans shards for expired keys                   │  │       │
+│         │  │  • Graceful shutdown support                       │  │       │
+│         │  └────────────────────────────────────────────────────┘  │       │
+│         └──────────────────────────────────────────────────────────┘       │
+│                                                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐  │
+│  │                         RESP Protocol Parser                         │  │
+│  │  • Zero-copy parsing with bytes::Bytes                               │  │
+│  │  • Supports: Simple Strings, Errors, Integers, Bulk Strings, Arrays  │  │
+│  │  • Inline command support (plain text like "SET key value")          │  │
+│  └──────────────────────────────────────────────────────────────────────┘  │
+└────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Key Design Decisions
