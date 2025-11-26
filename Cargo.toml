@@ -1,0 +1,36 @@
+[package]
+name = "flashkv"
+version = "0.1.0"
+edition = "2021"
+description = "A high-performance, in-memory Key-Value database built in Rust"
+authors = ["Ariz"]
+
+[dependencies]
+# Async runtime for handling thousands of concurrent connections
+tokio = { version = "1.48.0", features = ["full"] }
+
+# Efficient byte manipulation for zero-copy parsing
+bytes = "1.11.0"
+
+# Error handling
+anyhow = "1.0.100"
+thiserror = "2.0"
+
+# Logging and tracing for production observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+# For benchmarking and testing
+criterion = "0.5"
+tokio-test = "0.4"
+
+[[bench]]
+name = "throughput"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
