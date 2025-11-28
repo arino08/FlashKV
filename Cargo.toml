@@ -4,6 +4,14 @@ version = "0.1.0"
 edition = "2021"
 description = "A high-performance, in-memory Key-Value database built in Rust"
 authors = ["Ariz"]
+license = "MIT"
+repository = "https://github.com/Ariz/flashkv"
+homepage = "https://github.com/Ariz/flashkv"
+documentation = "https://docs.rs/flashkv"
+readme = "README.md"
+keywords = ["database", "key-value", "redis", "in-memory", "cache"]
+categories = ["database-implementations", "caching", "data-structures"]
+exclude = ["target/", ".gitignore", "docs/"]
 
 [dependencies]
 # Async runtime for handling thousands of concurrent connections
