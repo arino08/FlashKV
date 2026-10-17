@@ -1,12 +1,12 @@
 [package]
 name = "flashkv"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A high-performance, in-memory Key-Value database built in Rust"
 authors = ["Ariz"]
 license = "MIT"
-repository = "https://github.com/Ariz/flashkv"
-homepage = "https://github.com/Ariz/flashkv"
+repository = "https://github.com/arino08/FlashKV"
+homepage = "https://github.com/arino08/FlashKV"
 documentation = "https://docs.rs/flashkv"
 readme = "README.md"
 keywords = ["database", "key-value", "redis", "in-memory", "cache"]

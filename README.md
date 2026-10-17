@@ -145,7 +145,7 @@ I wanted to go beyond tutorials and actually implement the core systems that pow
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/flashkv.git
+git clone https://github.com/arino08/FlashKV.git
 cd flashkv
 
 # Build in release mode (optimized)
